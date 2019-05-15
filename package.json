@@ -4,6 +4,7 @@
   "description": "React scrollbars component",
   "main": "lib/index.js",
   "scripts": {
+    "install": "npm run build && npm run build:umd && npm run build:umd:min && node ./prepublish",
     "clean": "rimraf lib dist",
     "build": "babel src --out-dir lib",
     "build:umd": "cross-env NODE_ENV=development webpack src/index.js dist/react-custom-scrollbars.js",
