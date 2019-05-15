@@ -507,6 +507,7 @@ export default class Scrollbars extends Component {
             autoHeightMin,
             autoHeightMax,
             style,
+            rtl,
             children,
             ...props
         } = this.props;
@@ -547,6 +548,11 @@ export default class Scrollbars extends Component {
             // Override
             ...((universal && !didMountUniversal) && viewStyleUniversalInitial)
         };
+
+        if (rtl) {
+            delete viewStyle.marginRight;
+            viewStyle.marginLeft = scrollbarWidth ? -scrollbarWidth : 0;
+        }
 
         const trackAutoHeightStyle = {
             transition: `opacity ${autoHideDuration}ms`,
