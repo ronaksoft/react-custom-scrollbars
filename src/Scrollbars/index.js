@@ -497,6 +497,7 @@ export default class Scrollbars extends Component {
             renderThumbVertical,
             tagName,
             hideTracksWhenNotNeeded,
+            rtl,
             autoHide,
             autoHideTimeout,
             autoHideDuration,
@@ -507,7 +508,6 @@ export default class Scrollbars extends Component {
             autoHeightMin,
             autoHeightMax,
             style,
-            rtl,
             children,
             ...props
         } = this.props;
@@ -616,6 +616,7 @@ Scrollbars.propTypes = {
     thumbSize: PropTypes.number,
     thumbMinSize: PropTypes.number,
     hideTracksWhenNotNeeded: PropTypes.bool,
+    rtl: PropTypes.bool,
     autoHide: PropTypes.bool,
     autoHideTimeout: PropTypes.number,
     autoHideDuration: PropTypes.number,
@@ -642,6 +643,7 @@ Scrollbars.defaultProps = {
     tagName: 'div',
     thumbMinSize: 30,
     hideTracksWhenNotNeeded: false,
+    rtl: false,
     autoHide: false,
     autoHideTimeout: 1000,
     autoHideDuration: 200,
