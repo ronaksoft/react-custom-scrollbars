@@ -17,13 +17,24 @@ export function renderTrackHorizontalDefault({ style, ...props }) {
 }
 
 export function renderTrackVerticalDefault({ style, ...props }) {
-    const finalStyle = {
-        ...style,
-        right: 2,
-        bottom: 2,
-        top: 2,
-        borderRadius: 3
-    };
+    let finalStyle = {};
+    if (props.rtl) {
+        finalStyle = {
+            ...style,
+            left: 2,
+            bottom: 2,
+            top: 2,
+            borderRadius: 3
+        };
+    } else {
+        finalStyle = {
+            ...style,
+            right: 2,
+            bottom: 2,
+            top: 2,
+            borderRadius: 3
+        };
+    }
     return <div style={finalStyle} {...props} />;
 }
 
