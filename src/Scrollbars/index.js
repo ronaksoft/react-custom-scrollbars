@@ -550,8 +550,8 @@ export default class Scrollbars extends Component {
         };
 
         if (rtl) {
+            viewStyle.marginLeft = viewStyle.marginRight;
             delete viewStyle.marginRight;
-            viewStyle.marginLeft = scrollbarWidth ? -scrollbarWidth : 0;
         }
 
         const trackAutoHeightStyle = {
